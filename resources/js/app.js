@@ -38,9 +38,11 @@ function postOpt(id) {
 const container = $('#content-container');
 $(window).resize(()=>{
     if(window.innerWidth <= 768){
+        container.removeClass('ml-5');
         container.removeClass('border-left');
         container.removeClass('border-right');
     }else{
+        container.addClass('ml-5');
         container.addClass('border-left');
         container.addClass('border-right');
     }

@@ -10786,7 +10786,8 @@ body {
 }
 
 .category {
-  width: 70px;
+  max-width: 80px;
+  min-width: 70px;
   margin-right: 2.3rem;
 }
 
@@ -10804,6 +10805,14 @@ body {
   background-color: #152642;
 }
 
+.width-posts {
+  width: 580px;
+}
+
+.active {
+  min-width: 81px;
+}
+
 @media (min-width: 576px) {
   .user-icon {
     width: 71px;
@@ -10817,6 +10826,14 @@ body {
 
   .container {
     max-width: 750px;
+  }
+
+  .width-posts {
+    width: 400px;
+  }
+
+  .category {
+    margin-right: 0;
   }
 }
 
@@ -10841,7 +10858,12 @@ body {
   }
 
   .category {
-    margin-right: 2.3rem;
+    margin-right: 1.3rem;
+    width: 99px;
+  }
+
+  .width-posts {
+    width: 400px;
   }
 }
 
@@ -10867,7 +10889,11 @@ body {
   }
 
   .category {
-    margin-right: 3.3rem;
+    margin-right: 2.3rem;
+  }
+
+  .width-posts {
+    width: 580px;
   }
 }
 
@@ -10886,6 +10912,10 @@ body {
 
   .container {
     max-width: 1140px;
+  }
+
+  .width-posts {
+    width: 750px;
   }
 }
 

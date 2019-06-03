@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Category;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {   
@@ -16,6 +17,8 @@ class PostsController extends Controller
 
     public function index()
     {
+        
+
         $posts = Post::all();
         
         return view('posts.index', compact('posts'));

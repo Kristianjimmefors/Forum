@@ -129,7 +129,8 @@ body{
 }
 
 .category{
-    width: 70px;
+    max-width: 80px;
+    min-width: 70px;
     margin-right: 2.3rem;
 }
 
@@ -145,6 +146,14 @@ body{
     background-color: $darkBlue;
 }
 
+.width-posts{
+    width: 580px;
+}
+
+.active{
+    min-width: 81px;
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .user-icon {
@@ -157,6 +166,12 @@ body{
     }
     .container {
         max-width: 750px;
+    }
+    .width-posts {
+        width: 400px;
+    }
+    .category{
+        margin-right: 0;
     }
 }
 // Medium devices (tablets, 768px and up)
@@ -177,7 +192,11 @@ body{
         width: 60% !important;
     }
     .category {
-        margin-right: 2.3rem;
+        margin-right: 1.3rem;
+        width: 99px;
+    }
+    .width-posts {
+        width: 400px;
     }
 }
 // Large devices (desktops, 992px and up)
@@ -198,8 +217,12 @@ body{
         max-width: 960px;
     }
     .category{
-        margin-right: 3.3rem;
+        margin-right: 2.3rem;
     }
+    .width-posts {
+        width: 580px;
+    }
+    
 }
 
 // Extra large devices (large desktops, 1200px and up)
@@ -215,6 +238,9 @@ body{
     }
     .container{
         max-width: 1140px;
+    }
+    .width-posts {
+        width: 750px;
     }
 }
 
