@@ -1,7 +1,10 @@
 @extends('layouts.base')
 
 @section('content')
-    <h2>
+<div id="profile-container">
+
+</div>
+    {{-- <h2>
         {{ $user->name }}
     </h2>
     <p>
@@ -17,7 +20,7 @@
     </p>
     <p>
         comments: {{ count($user->comments) }}
-    </p>
+    </p> --}}
 
     <div id="change-password" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">

@@ -17,7 +17,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     <title>@yield('title', 'Forum')</title>
 </head>
 <body>

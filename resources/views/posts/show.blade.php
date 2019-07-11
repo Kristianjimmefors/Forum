@@ -30,8 +30,8 @@
             </div>
         @endif
     </div>
-
-        <!--display all comments-->
+    
+        {{-- visar alla kommentarer --}}
         @foreach($post->comments as $comment)
             <div class="col-sm-12 border-bottom d-flex mb-4">
                 <div class="d-flex flex-column mb-2">
@@ -63,9 +63,8 @@
             </div>
         @endforeach
 
-        <!-- check if the user are logged in -->
+        {{-- kollar om användaren är inloggad och visar formuläret för en ny kommentar --}}
         @auth
-            <!--Add a new comment-->
             @include('layouts.errors')
             <div class="col-sm-12 pt-4">
                 <form method="POST" action="/posts/{{ $post->id }}/comments">

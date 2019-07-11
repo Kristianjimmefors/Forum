@@ -37,10 +37,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //en till många relation mellan databas tabellen users och comments
     public function comments(){
         return $this->hasMany('App\comment', 'post_id', 'id');
     }
 
+    //en till många relation mellan databas tabellen users och posts
     public function posts(){
         return $this->hasMany('App\post', 'user_id', 'id');
     }

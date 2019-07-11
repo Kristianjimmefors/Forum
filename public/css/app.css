@@ -10752,16 +10752,17 @@ body {
   margin-bottom: 0;
 }
 
-.info-width {
-  width: 30%;
+.info-titles {
+  display: none;
 }
 
 #search {
   display: inline;
+  width: 75%;
 }
 
 #search-li {
-  margin-left: 10rem;
+  margin-left: 0;
 }
 
 .small {
@@ -10786,9 +10787,7 @@ body {
 }
 
 .category {
-  max-width: 80px;
-  min-width: 70px;
-  margin-right: 2.3rem;
+  min-width: 80px;
 }
 
 .post-title,
@@ -10799,6 +10798,9 @@ body {
 .category-link,
 .category-link:hover {
   color: #212529;
+  background-color: lightgray;
+  padding: 1px;
+  border-radius: 3px;
 }
 
 .modal-header {
@@ -10810,7 +10812,16 @@ body {
 }
 
 .active {
-  min-width: 81px;
+  min-width: 49px;
+}
+
+.comments {
+  min-width: 2.5rem;
+}
+
+#content-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -10824,8 +10835,8 @@ body {
     margin-left: 0;
   }
 
-  .container {
-    max-width: 750px;
+  #search {
+    width: 75%;
   }
 
   .width-posts {
@@ -10833,7 +10844,16 @@ body {
   }
 
   .category {
-    margin-right: 0;
+    margin-right: 2.5rem;
+  }
+
+  #content-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .info-titles {
+    display: flex;
   }
 }
 
@@ -10858,12 +10878,20 @@ body {
   }
 
   .category {
-    margin-right: 1.3rem;
+    margin-right: 2rem;
     width: 99px;
   }
 
   .width-posts {
     width: 400px;
+  }
+
+  .active {
+    margin-left: 2rem;
+  }
+
+  .comments {
+    margin-right: 1.5rem !important;
   }
 }
 
@@ -10881,19 +10909,24 @@ body {
   }
 
   #search {
+    margin-left: 0;
     width: 70%;
   }
 
-  .container {
-    max-width: 960px;
-  }
-
   .category {
-    margin-right: 2.3rem;
+    margin-right: 2.5rem;
   }
 
   .width-posts {
     width: 580px;
+  }
+
+  .active {
+    margin-left: 1rem;
+  }
+
+  .comments {
+    min-width: 2.5rem;
   }
 }
 
@@ -10910,12 +10943,17 @@ body {
     width: 80%;
   }
 
-  .container {
-    max-width: 1140px;
+  #search-li {
+    margin-left: 10rem;
   }
 
   .width-posts {
     width: 750px;
+  }
+
+  .active {
+    min-width: 60px;
+    margin-left: 2rem;
   }
 }
 

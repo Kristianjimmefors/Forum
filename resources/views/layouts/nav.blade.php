@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul id="left-side" class="navbar-nav mr-auto">
-                <li id="search-li" class="w-75 mb-2">
+                <li id="search-li" class="mb-2">
                     <form action="/posts/search" method="post">
                         @csrf
                         <input id="search" type="search" name="serchTerm" class="form-control pt-1">

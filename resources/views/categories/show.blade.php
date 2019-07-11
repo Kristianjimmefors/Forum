@@ -27,9 +27,9 @@
             </span>
             <span class="mt-2 ml-4">
                 @if (count($post->comments) > 0)
-                    {{ $post->comments->last()->created_at->format('d F') }}
+                    {{ $post->comments->last()->created_at->format('d M') }}
                 @else
-                    {{ $post->created_at->format('d F') }}
+                    {{ $post->created_at->format('d M') }}
                 @endif
             </span>
         </div>

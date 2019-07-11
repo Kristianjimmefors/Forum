@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class CommentsController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except(['index']);
+        $this->middleware('auth');
     }
 
     public function index()
@@ -30,8 +30,8 @@ class CommentsController extends Controller
     {
         $this->validate(request(), [
             'newComment' => 'required|profanity|string|max:1000',
-            ]);
-
+        ]);
+        
         $post->addComment(request('newComment'));
 
         return redirect()->back();
@@ -43,24 +43,15 @@ class CommentsController extends Controller
         //
     }
 
-    
     public function edit($post, $comment_id)
     {
-        if (!Auth::check()) {
-            return redirect()->route('home');
-        }
-
         $comment = Comment::find($comment_id);
     
         return view('comments.edit', compact('comment'));
     }
 
-    
     public function update(Request $request, $post, $comment_id)
     {
-        if (!Auth::check()) {
-            return redirect()->route('home');
-        }
         $this->validate(request(), [
             'edditedComment' => 'required|profanity|string|max:1000',
         ]);
@@ -76,10 +67,6 @@ class CommentsController extends Controller
     
     public function destroy($post, $comment_id)
     {
-        if (!Auth::check()) {
-            return redirect()->route('home');
-        }
-
         $comment = Comment::find($comment_id);
         $comment->delete();
 

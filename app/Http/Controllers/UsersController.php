@@ -8,6 +8,11 @@ use App\User;
 
 class UsersController extends Controller
 {
+    //kollar om man är inloggad och om man inte är det så redirectas man till logginsidan
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -23,6 +28,7 @@ class UsersController extends Controller
         //
     }
 
+    
     public function show()
     {
         $user = User::find(Auth::id());
@@ -35,6 +41,7 @@ class UsersController extends Controller
         //
     }
 
+    
     public function update(Request $request, $id)
     {
         
@@ -42,19 +49,17 @@ class UsersController extends Controller
             'password_old' => 'required|max:50',
             'password' => 'required|min:8|max:50|confirmed',
         ]);
-            dd($request);
+        
+        
         $user = User::find(Auth::id());
-        dd($user);
-        if ($user->password == $request->password_old) {
+        if (password_verify($request->password_old, $user->password)) {
             $user->password = $request->password;
             $user->save();
 
-            
+            return back();
+        }else{
+            return back();
         }
-         else{
-            dd('fuck');
-        }
-
     }
 
     public function destroy($id)

@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="info-titles d-flex border-bottom mb-2">
+    <div class="info-titles border-bottom mb-2">
         <p class="d-inline-block  width-posts">Title</p>
         <p class="d-inline-block mr-4">Catecory</p>
         <p class="d-inline-block ml-5">Comments</p>
@@ -22,14 +22,14 @@
                     {{ $post->category->name }}
                 </a>
             </span>
-            <span class="ml-5 pr-5 mt-2">
+            <span class="ml-5 mr-5 mt-2 comments">
                 <i class="fas fa-comment"></i> {{ count($post->comments) }}
             </span>
             <span class="mt-2 active">
                 @if (count($post->comments) > 0)
-                    {{ $post->comments->last()->created_at->format('d F') }}
+                    {{ $post->comments->last()->created_at->format('d M') }}
                 @else
-                    {{ $post->created_at->format('d F') }}
+                    {{ $post->created_at->format('d M') }}
                 @endif
             </span>
         </div>

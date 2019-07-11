@@ -12,13 +12,11 @@ use Illuminate\Support\Facades\DB;
 class PostsController extends Controller
 {   
     public function __construct(){
-        $this->middleware('auth')->except(['index', 'show', 'serch']);
+        $this->middleware('auth')->except(['index', 'show', 'search']);
     }
 
     public function index()
     {
-        
-
         $posts = Post::all();
         
         return view('posts.index', compact('posts'));
@@ -47,11 +45,10 @@ class PostsController extends Controller
             'body' => $request->body,
             'category_id' => $request->category_id,
         ]);
-
+        
         return redirect()->route('home');
     }
 
-    
     public function show($id)
     {
         $post = Post::find($id);
@@ -62,11 +59,8 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        if ($post->id == Auth::id()) {
-            return view('posts.edit', compact('post'));
-        }else{
-            return back();
-        }
+
+        return view('posts.edit', compact('post'));
         
     }
 
@@ -85,7 +79,7 @@ class PostsController extends Controller
 
             return redirect()->route('post', $id);
         }else{
-            return redirect()->route('post', $id);
+            return back();
         }
     }
 
